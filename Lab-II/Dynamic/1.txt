@@ -1,0 +1,6 @@
+gcc -c lib_add.c lib_merge.c lib_sub.c -fpic
+gcc lib_add.o lib_merge.o lib_sub.o -shared -o lib_dy.so
+sudo cp lib_dy.so /usr/lib
+gcc -c main.c -fpic
+gcc -o main main.o -L. lib_dy.so
+./main

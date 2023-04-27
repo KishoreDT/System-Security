@@ -1,0 +1,5 @@
+gcc -c lib_amstrong.c lib_palindrome.c lib_reverse.c -fpic
+ar rcs lib_st.a lib_amstrong.o lib_palindrome.o lib_reverse.o
+gcc -c main.c -fpic
+gcc -o main main.o -L. lib_st.a
+./main
